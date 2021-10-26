@@ -8,6 +8,9 @@ job('First_Jenkins_Project_Via_DSL'){
     }
     steps{
         maven('clean package', 'webapp/pom.xml')
+        maven{
+            mavenInstallation("MAVEN_HOME")
+        }
     }
     publishers{
         archiveArtifacts{
