@@ -12,7 +12,7 @@ job('First_Jenkins_Project_Via_DSL'){
         // }
         // maven('clean package', 'webapp/pom.xml')
         // shell('/opt/maven/bin/mvn -f webapp/pom.xml clean package')
-        shell(readFileFromWorkspace('mvnbuild.sh'))
+        shell(readFileFromWorkspace('webapp/mvnbuild.sh'))
     }
     publishers{
         archiveArtifacts{
