@@ -11,8 +11,8 @@ job('First_Jenkins_Project_Via_DSL'){
         //     mavenInstallation("MAVEN_HOME")
         // }
         // maven('clean package', 'webapp/pom.xml')
-        shell('echo Building webapp package')
-        shell('/opt/maven/bin/mvn -f webapp/pom.xml clean package')
+        // shell('/opt/maven/bin/mvn -f webapp/pom.xml clean package')
+        shell(readFileFromWorkspace('mvnbuild.sh'))
     }
     publishers{
         archiveArtifacts{
