@@ -7,10 +7,10 @@ job('First_Jenkins_Project_Via_DSL'){
         scm('* * * * *')
     }
     steps{
-        maven('clean package', 'webapp/pom.xml')
         maven{
             mavenInstallation("MAVEN_HOME")
         }
+        maven('clean package', 'webapp/pom.xml')
     }
     publishers{
         archiveArtifacts{
