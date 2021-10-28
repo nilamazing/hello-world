@@ -6,11 +6,12 @@ pipeline{
                 sh '/opt/maven/bin/mvn -f pom.xml clean package'
             }
         }
-    }
+
     post{
         success{
             archiveArtifacts artifacts: '**/*.war'
         }
+    }
     }
         stage('Deploy to Staging'){
             steps{
