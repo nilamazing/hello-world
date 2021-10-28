@@ -18,5 +18,15 @@ pipeline{
                 build 'Deploy_Application_Staging'
             }
         }
+        stage('Deploy to Production'){
+            steps{
+                timeout(time: 5, unit: 'DAYS'){
+                    input{
+                        message "Approve the Deployment?"
+                    }
+                }
+                build 'Deploy_Application_Prod'
+            }
+        }
 }
 }
