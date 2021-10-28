@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Build code'){
             steps{
-                sh '/opt/mvn -f pom.xml clean package'
+                sh '/opt/maven/bin/mvn -f pom.xml clean package'
             }
         }
     }
